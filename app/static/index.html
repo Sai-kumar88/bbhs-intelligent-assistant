@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BBHS AI ASSISTANT - Baldwin Boys' High School</title>
+    <meta name="description" content="AI Assistant for Baldwin Boys' High School knowledge base, powered by NVIDIA Nemotron and Qdrant vector retrieval.">
+    <!-- Google Fonts: Outfit & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Top Navigation Bar -->
+        <header class="app-header">
+            <div class="header-brand">
+                <div class="brand-crest">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <span class="status-indicator" title="Connected to Knowledge Base"></span>
+                </div>
+                <div class="brand-text">
+                    <h1 class="brand-title">BBHS AI ASSISTANT</h1>
+                    <p class="brand-subtitle">Baldwin Boys' High School &bull; Knowledge Base System</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Chat Container -->
+        <main class="chat-main">
+            <!-- Messages Container -->
+            <div id="messages-container" class="messages-container"></div>
+
+            <!-- Typing Indicator (hidden by default) -->
+            <div id="typing-indicator" class="typing-container hidden">
+                <div class="assistant-avatar">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+                <div class="typing-bubble">
+                    <div class="typing-dots">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span class="typing-status">Searching documents & generating answer...</span>
+                </div>
+            </div>
+        </main>
+
+        <!-- Bottom Input Bar -->
+        <footer class="app-footer">
+            <form id="chat-form" class="chat-form">
+                <div class="input-wrapper">
+                    <textarea 
+                        id="user-input" 
+                        class="chat-input" 
+                        rows="1" 
+                        placeholder="Ask anything about Baldwin Boys' High School... (Press Enter to send)"
+                        required
+                    ></textarea>
+                    <button type="submit" id="send-btn" class="send-button" title="Send message">
+                        <i class="fa-solid fa-arrow-up"></i>
+                    </button>
+                </div>
+            </form>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="/static/app.js"></script>
+</body>
+</html>
